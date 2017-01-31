@@ -1,0 +1,15 @@
+/*
+  Component Wrapper
+  For use in ui component stylesheets to style the wrapper component. Typical usage includes:
+  - adding a background color
+  - setting a min height
+  - setting pos:rel for pos:abs components
+  - adding spacing so that shadows are visible
+*/
+._componentWrapper (@componentName, @rules) {
+  // @TODO make this conditional based on a var that's set when rendering the compnent libraray css. That way we keep the styles, light though they are likely to be, out of production css.
+
+  [data-component="@{componentName}"] {
+    @rules();
+  }
+}

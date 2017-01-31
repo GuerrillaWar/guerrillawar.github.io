@@ -1,0 +1,21 @@
+// 1. Font size 100% on html because our Toolkit em/rem mixins all use a default 16 css px. You can set your default font-size (e.g, 14px) on the body element in rem, em, px, whatever without issue.
+
+// 2. Prevents iOS text size adjust after orientation change, without disabling user zoom
+// www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+
+// 3. Break long words into parts. This is not the same as hyphens, it just breaks and wraps single words that are wider than their parent containers.
+
+// 4. Always show a window scrollbar. This prevents page content from shifting ~10px to the side when going between pages that are shorter then taller than the widow height. This also helps prevent the same shift when doing things like locking overflow when navigation is visible.
+
+// (5) Support overflow: hidden on iOS devices
+
+html {
+  font-size: 100%; // (1)
+  -webkit-text-size-adjust: 100%; // (2)
+  -ms-text-size-adjust: 100%; // (2)
+
+  word-wrap: break-word; // (3)
+  overflow-y: scroll; // (4)
+
+  position:relative; // (5)
+}

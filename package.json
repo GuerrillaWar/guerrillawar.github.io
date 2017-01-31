@@ -1,0 +1,70 @@
+{
+  "name": "guerrillawar.github.io",
+  "version": "1.0.0",
+  "description": "Guerrilla War Public Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "component-server": "nodemon --delay 1 --watch _build/scripts ./_build/scripts/src/component-server/run.js",
+    "component-server-static": "node ./dist/view-layer/component-server/build.js",
+    "build": "gulp package && npm run component-server-static && gulp package"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuerrillaWar/guerrillawar.github.io.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GuerrillaWar/guerrillawar.github.io/issues"
+  },
+  "homepage": "https://github.com/GuerrillaWar/guerrillawar.github.io#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-stylus": "^2.6.0",
+    "metalsmith": "^2.3.0",
+    "metalsmith-collections": "^0.9.0",
+    "metalsmith-layouts": "^1.7.0",
+    "metalsmith-markdown": "^0.2.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "dependencies": {
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-1": "^6.22.0",
+    "bemc-linter": "^0.1.0",
+    "chokidar": "^1.6.1",
+    "debounce": "^1.0.0",
+    "del": "^2.2.2",
+    "growl": "^1.9.2",
+    "gulp-babel": "^6.1.2",
+    "gulp-cached": "^1.1.1",
+    "gulp-changed": "^1.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-file": "^0.3.0",
+    "gulp-gzip": "^1.4.0",
+    "gulp-modernizr": "0.0.0",
+    "gulp-pleeease": "^2.0.2",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.4.0",
+    "gulp-stylus": "^2.6.0",
+    "gulp-tar": "^1.9.0",
+    "gulp-uglify": "^2.0.1",
+    "gulp-using": "^0.1.1",
+    "gulp-util": "^3.0.8",
+    "gulp-wait": "0.0.2",
+    "gulp-watch": "^4.3.11",
+    "i18next": "^6.0.3",
+    "i18next-client": "^1.11.4",
+    "merge-stream": "^1.0.1",
+    "on-demand-resizer": "^0.5.3",
+    "react-component-library": "^0.7.0",
+    "react-jade-transformer": "^1.0.1",
+    "serve-static": "^1.11.2",
+    "vinyl-source-stream": "^1.1.0",
+    "webpack": "^1.14.0"
+  }
+}

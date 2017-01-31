@@ -1,0 +1,22 @@
+media($str)
+  // $str -> '>=' 768
+  $oper = $str[0]
+  $value = $str[1]
+
+  if typeof($value) is not 'unit'
+    (error 'Expecting breakpoint value as unitless pixels; eg 960')
+
+  $query = min-width
+
+  if $oper is 'to' or $oper is '<'
+    $value = ($value - 1)
+    $query = max-width
+
+  if $oper is '>'
+    $value = ($value + 1)
+
+  @media ({$query}: ($value / 1px))
+    {block}
+
+  // @media ({$query}: ($value / 16 * 1em))
+  //   {block}

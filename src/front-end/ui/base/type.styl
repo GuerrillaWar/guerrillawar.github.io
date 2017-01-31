@@ -1,0 +1,30 @@
+/*
+Remove all default element margins.
+This forces you to be explicit with margins where you want to use them and encourages the early creation of Richtext* style context patterns; eg
+
+.Richtext\*
+  p + p
+    margin-top 1em
+
+  // or a more general:
+  & > * + *
+    margin-top 1em
+*/
+
+p,
+blockquote,
+figure {
+  margin: 0;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  font-size: 2em;
+  margin: 0;
+}

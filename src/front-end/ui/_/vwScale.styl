@@ -1,0 +1,19 @@
+/*
+  Spec min and max sizes to match two viewport widths and this function will output a calc unit using vw to scale the inbetween sizes.
+
+  .my-cool-heading {
+    .vwScaling(font-size, 48px, 580, 64px, 960);
+  }
+*/
+
+vwScale($property, $min_val, $min_vw, $max_val, $max_vw) {
+  {$property}: $min_val;
+
+  @media screen and (min-width: ($min_vw / 16em)) {
+    {$property}: 'calc(%s + (100vw - %s) * ((%s - %s) / (%s - %s)))' % ($min_val unit($min_vw,'px') unit($max_val,'') unit($min_val,'') $max_vw $min_vw);
+  }
+
+  @media screen and (min-width: ($max_vw / 16em)) {
+    {$property}: $max_val;
+  }
+}

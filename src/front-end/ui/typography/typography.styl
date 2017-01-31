@@ -1,0 +1,106 @@
+@require "../_/get"
+@require "../_/media"
+@require "../config/palette"
+// @require "../_/vwScale"
+
+$family = {
+  grotesk: {
+    fontStack: 'niveau-grotesk'\, sans-serif,
+    weight: {
+      normal: 300,
+      bold: 700,
+      black: 900,
+    },
+  },
+  // @TODO Lato is used once only and as a thin italic font served via typekit as the 300 normal version of the family
+  lato: {
+    fontStack: 'lato'\, sans-serif,
+    weight: {
+      normal: 300,
+    },
+  },
+}
+
+
+$typography = {
+  body: {
+    fontSize: 16px,
+    lineHeight: (24 / 16),
+    fontStack: get($family.grotesk.fontStack),
+    fontWeight: get($family.grotesk.weight.normal),
+    color: get($palette.global.body),
+  },
+  black: {
+    fontSize: 28px,
+    lineHeight: (33 / 28),
+    fontStack: get($family.grotesk.fontStack),
+    fontWeight: get($family.grotesk.weight.black),
+    color: get($palette.global.body),
+    textTransform: uppercase,
+  },
+  // colorAlt = get($palette.crete),
+}
+
+
+__black()
+  $t = $typography
+  font-family: get($t.black.fontStack)
+  font-weight: get($t.black.fontWeight)
+  font-size: get($t.black.fontSize)
+  line-height: get($t.black.lineHeight)
+  text-transform: get($t.black.textTransform)
+
+
+Typography(opt)
+  $t = $typography
+
+  if opt is 'body'
+    font-family: get($t.body.fontStack)
+    font-weight: get($t.body.fontWeight)
+    font-size: get($t.body.fontSize)
+    line-height: get($t.body.lineHeight)
+    color: get($t.body.color)
+
+  else if opt is 'lato'
+    font-family: get($family.lato.fontStack)
+    font-weight: get($family.lato.weight.normal)
+    font-style: italic
+    font-size: 28px
+    line-height (33 / 28)
+    color: get($palette.crete)
+
+  else if opt is 'black'
+    __black()
+    color: get($t.black.color)
+
+  else if opt is 'black.h1'
+    __black()
+    font-size 36px
+    line-height (33 / 49)
+    color: get($palette.piper)
+
+    +media('>=' 500)
+      font-size 49px
+
+  else if opt is 'black.h2'
+    __black()
+    font-size 28px
+    line-height (33 / 28)
+    color: get($palette.mondo)
+
+  else if opt is 'black.h3'
+    __black()
+    font-size 16px
+    line-height (33 / 16)
+    color: get($palette.surfieGreen)
+
+  else
+    error('No matching Typography found')
+
+
+
+._typography-default
+  Typography('body')
+
+._typography-display
+  Typography('lato')

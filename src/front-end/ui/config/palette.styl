@@ -1,0 +1,60 @@
+// Use: http://chir.ag/projects/name-that-color/#F9D5B4
+
+@require "../_/get"
+
+$COMP_SERV_PALETTE = {
+  // Greys
+  black: #000,
+  mineShaft: #333,
+  white: #FFF,
+
+  // Colours
+  satinLinen: #E5E1D3,
+  piper: #C16023,
+  sycamore: #919847,
+  mondo: #4B392E,
+  swirl: #D4D1C4,
+  surfieGreen: #097982,
+  crete: #7B872E,
+  stiletto: #992D32,
+}
+
+$REVERSE_PALETTE = {
+  // Greys
+  black: #FFF,
+  mineShaft: #000,
+  white: #000,
+
+  // Colours
+  satinLinen: #FFF,
+  piper: #FFF,
+  sycamore: #FFF,
+  mondo: #FFF,
+  swirl: #FFF,
+  surfieGreen: #FFF,
+  crete: #FFF,
+  stiletto: #FFF,
+}
+
+// Labelled Colours
+$palette = {
+  white: get($COMP_SERV_PALETTE.white),
+  mineShaft: get($COMP_SERV_PALETTE.mineShaft),
+  satinLinen: get($COMP_SERV_PALETTE.satinLinen),
+  piper: get($COMP_SERV_PALETTE.piper),
+  sycamore: get($COMP_SERV_PALETTE.sycamore),
+  mondo: get($COMP_SERV_PALETTE.mondo),
+  swirl: get($COMP_SERV_PALETTE.swirl),
+  surfieGreen: get($COMP_SERV_PALETTE.surfieGreen),
+  crete: get($COMP_SERV_PALETTE.crete),
+  stiletto: get($COMP_SERV_PALETTE.stiletto),
+
+  global: {
+    body: get($COMP_SERV_PALETTE.mineShaft),
+    primary: get($COMP_SERV_PALETTE.piper),
+    secondary: get($COMP_SERV_PALETTE.mondo),
+    tertiary: get($COMP_SERV_PALETTE.surfieGreen),
+    accent: get($COMP_SERV_PALETTE.stiletto),
+    borderColor: get($COMP_SERV_PALETTE.swirl),
+  },
+}

@@ -1,0 +1,20 @@
+// (1) Improves readability when focused and also mouse hovered in all browsers
+//     people.opera.com/patrickl/experiments/keyboard/test
+
+a:hover,
+a:active {
+  outline: 0; // (1)
+}
+
+
+// Default anchor style
+// In almost all cases anchors should be styled by class, or context.
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:focus {
+  outline: none;
+}

@@ -1,0 +1,9 @@
+// Use this to look up properties from object variables
+// This throws an error if an object property returns "" (eg isn't found)
+// in order to help you maintain dependencies
+
+get($prop)
+  if $prop == null
+    error('Prop lookup failed ' + $prop)
+
+  $prop
