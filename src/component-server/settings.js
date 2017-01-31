@@ -15,7 +15,8 @@ module.exports = {
   basedir: __dirname + "/../front-end/ui",
   extraHead: [].concat(
     [
-      React.DOM.script({ key: "tk", src: "https://use.typekit.net/aaaaaaa.js" }),
+
+      React.DOM.script({ key: "tk", src: "https://use.typekit.net/ggz8ffy.js" }),
       React.DOM.script({ key: "tks", dangerouslySetInnerHTML: {
         __html: "try{Typekit.load({ async: true });}catch(e){}"
       }}),

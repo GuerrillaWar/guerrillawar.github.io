@@ -4,19 +4,11 @@
 // @require "../_/vwScale"
 
 $family = {
-  grotesk: {
-    fontStack: 'niveau-grotesk'\, sans-serif,
+  monsal: {
+    fontStack: 'monsal-gothic'\, sans-serif,
     weight: {
       normal: 300,
       bold: 700,
-      black: 900,
-    },
-  },
-  // @TODO Lato is used once only and as a thin italic font served via typekit as the 300 normal version of the family
-  lato: {
-    fontStack: 'lato'\, sans-serif,
-    weight: {
-      normal: 300,
     },
   },
 }
@@ -26,29 +18,19 @@ $typography = {
   body: {
     fontSize: 16px,
     lineHeight: (24 / 16),
-    fontStack: get($family.grotesk.fontStack),
-    fontWeight: get($family.grotesk.weight.normal),
+    fontStack: get($family.monsal.fontStack),
+    fontWeight: get($family.monsal.weight.normal),
     color: get($palette.global.body),
   },
-  black: {
+  bold: {
     fontSize: 28px,
     lineHeight: (33 / 28),
-    fontStack: get($family.grotesk.fontStack),
-    fontWeight: get($family.grotesk.weight.black),
+    fontStack: get($family.monsal.fontStack),
+    fontWeight: get($family.monsal.weight.bold),
     color: get($palette.global.body),
     textTransform: uppercase,
   },
-  // colorAlt = get($palette.crete),
 }
-
-
-__black()
-  $t = $typography
-  font-family: get($t.black.fontStack)
-  font-weight: get($t.black.fontWeight)
-  font-size: get($t.black.fontSize)
-  line-height: get($t.black.lineHeight)
-  text-transform: get($t.black.textTransform)
 
 
 Typography(opt)
@@ -61,38 +43,15 @@ Typography(opt)
     line-height: get($t.body.lineHeight)
     color: get($t.body.color)
 
-  else if opt is 'lato'
-    font-family: get($family.lato.fontStack)
-    font-weight: get($family.lato.weight.normal)
-    font-style: italic
-    font-size: 28px
-    line-height (33 / 28)
-    color: get($palette.crete)
-
-  else if opt is 'black'
-    __black()
-    color: get($t.black.color)
-
-  else if opt is 'black.h1'
-    __black()
+  else if opt is 'header'
+    font-family: get($t.bold.fontStack)
+    font-weight: get($t.bold.fontWeight)
     font-size 36px
     line-height (33 / 49)
-    color: get($palette.piper)
+    color: get($t.body.color)
 
     +media('>=' 500)
       font-size 49px
-
-  else if opt is 'black.h2'
-    __black()
-    font-size 28px
-    line-height (33 / 28)
-    color: get($palette.mondo)
-
-  else if opt is 'black.h3'
-    __black()
-    font-size 16px
-    line-height (33 / 16)
-    color: get($palette.surfieGreen)
 
   else
     error('No matching Typography found')
@@ -103,4 +62,4 @@ Typography(opt)
   Typography('body')
 
 ._typography-display
-  Typography('lato')
+  Typography('header')
