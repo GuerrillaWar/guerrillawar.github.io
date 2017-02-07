@@ -4,9 +4,9 @@ var CONFIG = {
   paths: {
     frontEnd: "./src/front-end",
     componentServer: "./src/component-server",
-    scriptsOut: "./_build/scripts",
-    assetsOut: "./_build",
-    mediaOut: "./_build/media",
+    scriptsOut: "./build/scripts",
+    assetsOut: "./build",
+    mediaOut: "./build/media",
     dist: "./_dist",
   },
 

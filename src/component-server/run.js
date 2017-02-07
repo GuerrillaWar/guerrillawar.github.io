@@ -19,8 +19,8 @@ require.extensions['.svg'] = function(module, filename) {
 
 const server = ComponentServer(serverSettings);
 
-const ASSET_PATH = __dirname + "/../../../../_build/assets/"
-const MEDIA_PATH = __dirname + "/../../../../_build/media/"
+const ASSET_PATH = __dirname + "/../../../../build/assets/"
+const MEDIA_PATH = __dirname + "/../../../../build/media/"
 server.configApp((app) => {
   app.use('/assets', express.static(ASSET_PATH))
   app.use('/media', express.static(MEDIA_PATH))
@@ -28,7 +28,5 @@ server.configApp((app) => {
 
 
 console.log("Running Component Server, port 3600")
-console.log("ASSETS from ", ASSET_PATH)
-console.log("MEDIA from ", MEDIA_PATH)
 
 server.listen(3600)

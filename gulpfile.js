@@ -27,7 +27,7 @@ var runTasks = function(tasks) {
 growl("Gulp Started")
 
 gulp.task("clean", function() {
-  return del([ '_build/**/*',
+  return del([ 'build/**/*',
   ]);
 })
 

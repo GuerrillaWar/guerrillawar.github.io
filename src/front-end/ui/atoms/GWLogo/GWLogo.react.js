@@ -19,8 +19,12 @@ export default class GWLogo extends ContextComponent {
     if (className) { classes[className] = true }
 
     return rj`
-      div(class=cx(classes))
-        = children
+      span(class=cx(classes))
+        img(
+          class=cx('&__img')
+          src='/assets/GWLogo/GWLogo.png'
+          alt='Guerrilla War'
+        )
     `
   }
 }

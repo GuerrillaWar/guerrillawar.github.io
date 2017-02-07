@@ -1,0 +1,97 @@
+// Variables
+$Home = {}
+
+// Dependencies
+@require "../../_/get"
+@require "../../typography"
+@require "../../config/palette"
+
+// Sub-components
+// @require "../../atoms/SplashButton"
+
+@require "../../atoms/GWLogo"
+
+
+// Component Styles
+.Home
+  display block
+
+  &__header
+    position relative
+    background #333
+    background: url('/assets/Home/StratMap.jpg') center
+    background-size cover
+    padding-bottom: 400px
+
+    &:before
+      content ''
+      position absolute
+      top 0
+      left 0
+      right 0
+      height 270px
+      background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0))
+
+
+  &__headerText
+    position absolute
+    top 0
+    left 0
+    right 0
+    padding 1rem
+
+  &__headerLogo
+    margin-right 20px
+    vertical-align middle
+
+  &__tagline
+    Typography('quote')
+    display inline-block
+    margin 0
+    position relative
+    top -6px
+    line-height: 1.2em
+    vertical-align middle
+    max-width 300px
+
+  &__swapper
+    position relative
+    display inline-block
+    &:before
+      position absolute
+      content ''
+      left 0
+      right 0
+      bottom 0
+      top 0
+      background: get($palette.global.primary)
+      transform scaleX(0)
+      transition: transform 0.2s ease
+      transform-origin 0 0
+
+    &.is-redacted:before
+      transform scaleX(1)
+    &.is-unredacting:before
+      transform-origin 100% 0
+
+  &__summary
+    Typography('quote')
+    font-style italic
+    padding 2rem 4rem
+    max-width 900px
+    margin auto
+    text-align center
+
+  &__extendedSummary\\*
+    h1
+      Typography('header')
+      border-bottom: 1px solid get($palette.global.primary)
+      margin-top 2em
+      line-height 35px
+
+    h1:first-child
+      margin-top 0
+
+    h1, p
+      padding 0 4rem
+

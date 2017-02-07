@@ -1,5 +1,7 @@
 @require "../typography/typography"
 @require "../_/fontSmoothing"
+@require "../config/palette"
+@require "../_/get"
 
 
 body
@@ -7,3 +9,4 @@ body
   fontSmoothing()
   margin 0
   padding 0
+  background: get($palette.global.background)

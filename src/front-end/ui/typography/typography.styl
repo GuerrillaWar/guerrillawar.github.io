@@ -43,12 +43,19 @@ Typography(opt)
     line-height: get($t.body.lineHeight)
     color: get($t.body.color)
 
+  else if opt is 'quote'
+    font-family: get($t.body.fontStack)
+    font-weight: get($t.body.fontWeight)
+    font-size: 24px
+    line-height: get($t.body.lineHeight)
+    color: get($palette.global.primary)
+
   else if opt is 'header'
     font-family: get($t.bold.fontStack)
     font-weight: get($t.bold.fontWeight)
     font-size 36px
-    line-height (33 / 49)
-    color: get($t.body.color)
+    line-height 46px
+    color: get($palette.global.primary)
 
     +media('>=' 500)
       font-size 49px
